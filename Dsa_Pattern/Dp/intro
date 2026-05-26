@@ -1,0 +1,30 @@
+Dynamic Programming:
+
+ DP is an optimization technique used when:
+   1) problem has overlapping subproblems
+   2) problem has optimal substructure
+
+   Instead of recomputing the same thing again and again, you store results and reuse them.
+   solve smaller problems -> store results -> reuse them
+
+
+Step to solve Dp problems:
+
+    1)define dp state  => dp[i]
+    2)Find recurrence
+    3)Base case for smaller values
+    4)choose approach
+    5)optimize (reduce space)
+
+shortcut to write any problem:
+1) Try to represent the problem in terms of indexes
+2) Do all possible stuffs on that
+3) sum of all stuffs => count all possible ways
+   min(all stuffs) => find min
+
+
+
+1) memoization (top-down approach)
+  Recursion + caching(stored results)
+2)Tabulation (Bottom-up approach)
+   Iterative

@@ -1,0 +1,56 @@
+String => sequence of characters are called string
+          define with double quotes
+          String is object(non -primitive data type)
+          It immutable can't change -> any modification create new string
+          ex:  "hello" => "hello world" => old string still exists in memory
+
+Memory for storing:
+
+        String constant Pool(SCP)
+
+        ex: String a = "abc";
+            String b = "abc";
+            Only one object is created a,b both are denoting the same;
+
+
+StringBuffer:
+
+  its mutable
+  that means you can modify the same object
+  no new object creation for change.
+
+  ex:
+
+  StringBuffer str = new StringBuffer("Hello");
+  str.append("world)";
+
+  "Hello world" => same object
+
+when to use?
+
+string => when string is constant no frequent changes are needed.
+StringBuffer => when loop-based changes
+
+why?
+string => immutable
+  security => file paths , urls
+  Thread safety
+
+ String builder => mutable , it's not thread safed , but faster performance
+
+
+String Operation:
+
+Concatenation
+Length
+Index access
+Slicing/SubString
+Comparison
+Searching
+Case Conversion
+Replacement
+Trimming
+
+
+
+

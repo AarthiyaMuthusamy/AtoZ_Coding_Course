@@ -1,0 +1,47 @@
+8 core dsa
+
+#1 Arrays
+Pattern:
+ 1) two pointer
+ 2) sliding window
+ 3) prefix sum
+
+#2 HashMap
+Pattern:
+ 1) Frequency counting
+ 2) Fast lookups
+ 3) Caching / Memorization
+
+#3 Stacks
+Pattern:
+  1) Valid Parenthesis/ Matching pairs
+  2) Monotonic stack
+
+#4 Queues
+Pattern:
+ 1) Bfs on trees
+ 2)Bfs on graphs
+
+#5 Linkedlist
+Pattern:
+ 1) Fast and slow pointers
+ 2) In-place traversal
+
+#6 Trees
+Pattern:
+ 1)Dfs recursive
+ 2)Dfs iterative
+ 3)Bfs
+
+#7 Graphs
+Pattern:
+ 1)Dfs
+ 2)Bfs
+
+#8 Heaps
+Pattern:
+ 1)Top 'k' element
+ 2)Merge 'k' sorted elements
+
+
+

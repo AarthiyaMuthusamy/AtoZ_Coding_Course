@@ -1,0 +1,113 @@
+
+Collections Framework: (part of util)
+
+provides a unified architecture for storing and manipulating groups of objects.
+offering interfaces(List, Set, Map, Queue) and implementations (ArrayList, HashMap, HashSet) to manage data efficiency.
+it overcomes the array resizing efficiently using ArrayList.
+
+key components:
+
+ Interface => Define core behaviours such as List(Ordered), Set(unique elements), Map(key-value) pair , Queue.
+ implementations => actual reusable data structures like ArrayList, LinkedList, HashSet, TreeSet, HashMap, and TreeMap.
+ Algorithms => Methods providing sorting and searching functionality, notably within the collections utility class.
+
+
+core interfaces:
+
+1)collecction(root interface)
+    Base interface for all collections
+
+Types under
+Collection
+    |---- List
+    |---- Set
+    |---- Queue
+
+2)List (Ordered, Allows Duplicates):
+    Maintains insertion order
+common classes:
+        ArrayList
+        LinkedList
+        vector
+
+3) Set (No duplicates)
+Does Not allow duplicate values
+
+common classes:
+        HashSet -> unordered
+        LinkedHashSet -> Maintains insertion order
+        TreeSet -> sorted order
+
+
+4) Queue (Fifo - First in First Out)
+Used for processing elements in order
+
+common classes:
+        PriorityQueue
+        LinkedList
+        ArrayDeque
+
+
+3) Map Interface  (key - Value pair)
+Not Part of collection (separate hierarchy)
+
+common classes:
+        HashMap
+        LinkedHashMap
+        TreeMap
+
+4)Important Differences
+
+Feature        List         Set          Map
+
+order          yes         Depends      Depends
+Duplicates     yes           no         key: no
+Index access   yes           no          no
+
+
+5)common methods
+
+        add()
+        remove()
+        size()
+        contains()
+        clear()
+        isEmpty()
+
+6) When to use what?
+
+ArrayList => fast access , frequent reads
+LinkedList => Frequent insert/delete
+Hashset => Unique elements
+HashMap => Key-Value lookup(fast)
+TreeSet/ TreeMap => Sorted data
+
+
+
+7) Stack:
+its also part of collections( but indirectly)
+stack is a class in java
+stack extends vector
+vector implements List
+
+Stack is considered Legacy (old design)
+why because ?
+it extends vector(Synchronized -> slower)
+Not recommend for modern use
+
+
+  => Alternative use deque
+  Deque<Integer> stack  = new ArrayDeque<>();
+
+
+
+
+
+
+
+
+
+
+
+
+

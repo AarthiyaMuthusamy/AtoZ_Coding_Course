@@ -1,0 +1,270 @@
+Hashmap works on Constant time O(1)
+
+structure: (key value pairs)
+
+key (name) | value(name)
+aarthiya   | 88
+ravi       | 82
+yara       | 83
+
+map.get("aarthiya") return the value = 88
+There is no traversal , searching. Directly go to the search value and return it
+
+Hashcode :
+ any input it will create an number using these function
+
+ 1) we need all elements as positive integer
+ 2) hashcode that i get is very large (reduce it)=> hashing reduce all elements in size m
+
+ ex: size of array is m = 10
+ Integer value return same hashcode (because its unique)
+ String value do some internal operation return the value
+
+ "aarthiya" => hashCode("aarthiya") = 734985 (want to insert the size 10 only)
+ "ravi"     => hashCode("ravi") = 381347
+ "yara"     => hashCode("yara") = 239873
+
+ so , reduce the large number using modulo
+ 734985 % 10 = 5
+ 381347 % 10 = 7
+ 239873 % 10 = 3
+
+ sometimes we get same modulo value.
+
+ ex:
+ "rahul" => hashCode("rahul") =  394783
+ 394783 % 10  = 3
+
+"yara" => hashCode("yara") = 239873
+ 239873 % 10 = 3
+
+  both have same hashCode value its called collision
+
+collision :
+
+ 2 ways : 1) chaining  2) open addressing
+
+
+Chaining
+=======
+
+
+using linkedlist for storing
+
+[0] [1] [2] [3]   [4] [5] [6] [7] [8] [9]
+             |              |   |
+            rahul          cio  aarthiya
+              |
+            yara
+              |
+            arun
+             => traversal need in here
+Instead of putting all in one uniformly put all values
+
+single uniform hashing
+======================
+
+n = no of keys in table
+m = size of table
+
+load factor alpha = n / m  = expected key per slot (each slot how many values need to be added)
+O(1) time
+
+
+hash functions:
+==============
+
+1) division method:
+h(k) = k % m
+m = prime no (not too close to the power of 2 or 10)
+
+2)multiplication method
+h(k) = [(a.k)% 2]>> (w-r)
+a = random number
+w = no of bits in k
+m = 2^r
+
+
+universal hashing:
+=================
+
+h(k) = [(ak+b) % p] % m
+a & b are random [0,1,...,p-1]
+p is a large prime number
+
+
+2) open addressing
+
+one item per slot
+try next possible item to store
+
+probing strategies:
+
+1)linear probing
+ h(k,i) = (h(k) + i ) % m linearly jumping one by one
+problem is clustering
+
+2)Double hashing
+h(k,i) = (h(k) + i * h2(k)) % m
+
+if h2(k) is relation prime to m for all k.
+
+
+Interface Map<K,V>:
+TreeMap => items stored in order for map
+Set = > remove duplicates have the unique elements
+
+
+HashMap dsa used to store data in key-value pairs. it allows fast insertion , deletion, and searching.
+
+each key is unique. key maps to value
+
+how works:
+key passed to hash function
+hash function converts key => index (array position)
+values stored at index
+
+key features:
+
+fast operations
+  insert -> O(1)
+  search -> O(1)
+  delete -> O(1)
+
+key must be unique . values can be duplicate
+Unordered (not maintain the order)
+
+Methods:
+
+1) put => inserts or updates a key-value pair (if key exists value is updated)
+
+map.put("Aara",21);
+
+2)get => retrieve value using key
+
+map.get("Aara") // output : 21
+
+3) remove => deleted key-value pair
+
+map.remove("Aara")
+
+4) containsKey() = > checks if exists
+map.containsKey("Aara") // true or false
+
+5) containsValue() => checks if value exists
+map.containsValue(21)
+
+6) size() => Returns number of elements
+map.size()
+
+7) isEmpty() => checks if map is empty
+map.isEmpty()
+
+8) clear() => remove all elements
+map.clear()
+
+9) keySet() => returns all keys
+map.keySet()
+
+10) values() => Returns all values
+map.values()
+
+11) entrySet() => returns key-value pairs
+
+for(Map.entry<String,Integer> entry : map.entrySet()){
+  {
+    System.out.println(entry.getKey() + " " + entry.getValue())
+  }
+
+
+12) getOrDefault() - returns value or default if key not found
+map.getOrDefault("Bob" , 0);
+
+13) putIfAbsent() = > Inserts only if key is not present
+map.putIfAbsent("Aara" , 30);
+
+14) replace() => replaces value
+map.replace("Aara",50)
+
+15) ForEach() => loop through map
+
+map.foreach((key, value) -> System.out.println(key + " " + value))
+
+
+
+Techniques:
+
+1) Frequency counting
+ store how many times each elements appears.
+ -> use HashMap<Element, count>
+
+ when to use;
+
+         Count duplicates
+         find most/ least frequent element
+         Anagram problems
+         First non-repeating element
+
+
+
+ most used function:
+    map.put(n, map.getOrDefault(n,0)+1);
+
+
+
+
+2)Fast Look ups:
+
+Use HashMap to check existence instantly O(1) time.
+Instead of searching array O(n).
+
+when to use:
+
+        two sum problem
+        check duplicates
+        Find pair with target
+        Membership checking
+
+most used function:
+
+  map.containsKey()
+
+
+3) Caching / memorization
+
+Store already computed result -> avoid recomputation
+
+improves performance (especially recursion)
+
+when to use:
+
+        Recursion Optimization
+        Dynamic Programming
+        Fibonacci , Factorial
+        Overlapping subproblems
+
+
+Interview trick:
+
+"count" => frequency Map
+"find pair" => Lookup
+"optimize recursion" => Memorization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+Recursion : func call itself , until met specified condition (Base condition)
+
+
+when the condition it not mentioned the func goes on infinite so it gives an error => stack overflow (the memory ran out)

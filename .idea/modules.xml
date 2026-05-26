@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AtoZ_Coding_Course.iml" filepath="$PROJECT_DIR$/AtoZ_Coding_Course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tcs/Tcs.iml" filepath="$PROJECT_DIR$/Tcs/Tcs.iml" />
+    </modules>
+  </component>
+</project>
