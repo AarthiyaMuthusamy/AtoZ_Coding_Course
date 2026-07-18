@@ -6,7 +6,7 @@ public class Gcd {
     int n1 = sc.nextInt();
     int n2 = sc.nextInt();
     //System.out.println(gcd(n1, n2));
-    gcd1(n1, n2);
+    System.out.println(gcd1(n1,n2));
     
   }
   
@@ -39,13 +39,12 @@ public class Gcd {
   }
 
 //using the euclidean algorithm
-  public static void gcd1(int n1, int n2){
+  public static int gcd1(int n1, int n2){
     while(n1 > 0 && n2 > 0){
       if(n1 > n2) n1 = n1 % n2;
       else n2 = n2 % n1;
     }
-    if(n1 == 0) System.out.println(n2);
-    if(n2 == 0) System.out.println(n1);
+    return (n1 == 0) ? n2 : n1;
 
 
   }

@@ -16,7 +16,10 @@ public class StringCompression {
             System.out.print(entry.getKey()+""+entry.getValue());
         }
 
-        System.out.println(stringCompression(s));
+       // System.out.println(stringCompression(s));
+        System.out.println();
+        String s2 = "a3b3c2d4";
+        System.out.println(stringUnCompression(s2));
 
     }
 
@@ -38,5 +41,24 @@ public class StringCompression {
 
         result += s.charAt(s.length()-1) + "" + count;
         return result;
+    }
+
+
+    public static String stringUnCompression(String s){
+
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < s.length() ; i+=2) {
+            char ch = s.charAt(i);
+            int count = s.charAt(i+1) - '0';
+            for (int j = 0; j < count; j++) {
+                result.append(ch);
+            }
+
+        }
+
+
+        return result.toString();
     }
 }
