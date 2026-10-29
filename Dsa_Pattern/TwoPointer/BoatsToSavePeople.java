@@ -32,6 +32,7 @@ Explanation: 4 boats (3), (3), (4), (5)
         int i = 0;
         int j = people.length-1;
 
+        //1 2 2 3
         while (i <= j){
             if(people[i] + people[j] <= limit){
                 i++;

@@ -29,7 +29,7 @@ public class PrimeNumber {
   //Better approach
   public static boolean prime1(int n){
     int cnt = 0;
-    for (int i = 1; i <= Math.sqrt(n); i++) {
+    for(int i = 1; i <= Math.sqrt(n); i++){
       if(n%i == 0){
         cnt ++;
       

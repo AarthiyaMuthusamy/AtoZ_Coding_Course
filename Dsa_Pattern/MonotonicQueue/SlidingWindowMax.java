@@ -30,15 +30,15 @@ public class SlidingWindowMax {
 
     //optimal
     private static int[] maxElementwWithK(int[] nums, int k){
-        int[] result = new int[nums.length - k];
+        int[] result = new int[nums.length - k+1];
         Deque<Integer> dq = new ArrayDeque<>();
         int idx = 0;
-        for (int i = 0; i < nums.length-1 ; i++) {
+        for (int i = 0; i < nums.length; i++) {
             while (!dq.isEmpty() && dq.peekFirst() <= i -k){
              dq.pollFirst();
             }
 
-            while (!dq.isEmpty() && nums[dq.peekLast()] < nums[i]){
+            while (!dq.isEmpty() && nums[dq.peekLast()] <= nums[i]){
                 dq.pollLast();
             }
             dq.offerLast(i);
